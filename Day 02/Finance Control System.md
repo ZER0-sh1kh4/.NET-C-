@@ -1,27 +1,27 @@
 # Day 02 – .NET (C#)
 
 ### Problem Statement
-Design a Finance Control System that performs the following tasks:
-Loan Eligibility Check
-Income Tax Calculation
-Transaction Entry System
-Exit Program
-The system should run continuously until the user chooses to exit.
+Design a Finance Control System that performs the following tasks:<br>
+Loan Eligibility Check<br>
+Income Tax Calculation<br>
+Transaction Entry System<br>
+Exit Program<br>
+The system should run continuously until the user chooses to exit.<br>
 
-Finance Rules Used
+Finance Rules Used<br>
 a-Loan Eligibility Rules
-  Age must be 21 years or above
-  Monthly income must be ₹30,000 or more
-b-Income Tax Rules
+  Age must be 21 years or above and 
+  Monthly income must be ₹30,000 or more<br>
+b-Income Tax Rules<br>
   Annual Income
   Tax Rate ≤ ₹2,50,000 0%
   ₹2,50,001 – ₹5,00,000 5%
   ₹5,00,001 – ₹10,00,000 20%
-  Above ₹10,00,000 30%
-c-Transaction Rules
+  Above ₹10,00,000 30%<br>
+c-Transaction Rules<br>
   User can enter 5 transactions
   Negative amount is invalid
-  Invalid transactions should be skipped
+  Invalid transactions should be skipped<br>
   
 Menu Design (Using switch-case)
 1. Check Loan Eligibility
