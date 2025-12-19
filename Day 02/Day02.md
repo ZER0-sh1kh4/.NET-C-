@@ -1,4 +1,4 @@
-# Day 01 – .NET (C#)
+# Day 02 – .NET (C#)
 
 ### Problem Statement
 1- First 5 numbers
