@@ -9,7 +9,7 @@ Exit Program<br>
 The system should run continuously until the user chooses to exit.<br>
 
 Finance Rules Used<br>
-a-Loan Eligibility Rules
+a-Loan Eligibility Rules<br>
   Age must be 21 years or above and 
   Monthly income must be ₹30,000 or more<br>
 b-Income Tax Rules<br>
