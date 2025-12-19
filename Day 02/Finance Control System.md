@@ -29,6 +29,9 @@ Menu Design (Using switch-case)
 3. Enter Transactions
 4. Exit
 
+Flowchart
+![Calculator Flowchart](flowchart.jpeg)
+
 ### Code
 ```csharp
 using System;
