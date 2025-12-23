@@ -8,7 +8,7 @@ Abstract Methods-> methods without implementation<br>
 -can have constructors<br>
 Concrete Methods-> methods with implementation<br>
 
-###Interfaces
+### Interfaces
 Interface reduce loose coupling<br>
 supports multiple inheritence<br>
 runtime ploymorphism<br>
@@ -16,7 +16,7 @@ If interface has 2 methods, both need to be used<br>
 interfaces could not contain fields or instance variables<br>
 Types-> Explicit interface(behaviour can be different of common methods of interface) and Implicit Interface(behaviour is same of common methods)<br>
 
-###Problem Statement
+### Problem Statement
 Implementing Explicit Interface
 
 ```csharp
@@ -60,28 +60,28 @@ class Lol : Print, Me
 ```
 -cant call directly , call it by reference<br>
 
-###NameSpace
+### NameSpace
 
 ```csharp
 namespace.class object=new namespace.class();
 ```
 -nested Namespace
 
-###Alias
+### Alias
 nickname for namespace
 
 ```csharp
 using Alias=Namespace
 ```
 
-###Partial class
+### Partial class
 split single class across multiple files, while complier treat it as one "partial"
 
-###Static Class
+### Static Class
 -not allow object creation<br>
 -impilicitely sealed<br>
 
-###Enumeration
+### Enumeration
 -keyword "enum"<br>
 -special value type<br>
 -mapping fixed sets of value clearly<br>
