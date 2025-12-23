@@ -86,7 +86,7 @@ split single class across multiple files, while complier treat it as one "partia
 -special value type<br>
 -mapping fixed sets of value clearly<br>
 
-```charp
+```csharp
 enum Priority{
       Low=1,
       Medium=2,
