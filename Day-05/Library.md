@@ -7,7 +7,7 @@ You are developing a Library Management System that handles Books, eBooks, and M
 This scenario allows you to use all the above concepts effectively.
 
 
-```charp
+```csharp
 using Alias=LibrarySystem.Items;          //Alias
 namespace LibrarySystem{                  //nmaespace Library system started ...
 namespace Items{                         //namespace Items started..
