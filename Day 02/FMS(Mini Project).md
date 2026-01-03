@@ -182,7 +182,7 @@ class Credit
     {
         Console.WriteLine("Enter the credit card spending: ");
         int creditcard=Convert.ToInt32(Console.ReadLine());
-        int point=creditcard*100;
+        int point=creditcard/100;
         Console.WriteLine("Reward points earned: "+ point);
     }
     public static void BonusEligibility()
