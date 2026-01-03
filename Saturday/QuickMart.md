@@ -1,4 +1,4 @@
-# Day-08 .NET(C#)
+# Day-08(Saturday) .NET(C#)
 
 ### Problem Statemnet
 
