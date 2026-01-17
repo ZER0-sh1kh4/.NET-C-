@@ -1,7 +1,6 @@
 # DAY-18(Saturday) .NET(C#)
 
 ### Problem Statement
-### Problem Statement
 
 ```csharp
 using System;
