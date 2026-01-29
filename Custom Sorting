@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+public class Student
+{
+    public string Name{get; set;}
+    public int Age{get; set;}
+    public int Marks{get; set;}
+}
+public class Comparer : IComparer<Student>
+{
+    public int Compare(Student x, Student y)
+    {
+        if(x.Marks != y.Marks)
+        {
+            return y.Marks.CompareTo(x.Marks);
+        }
+        return x.Age.CompareTo(y.Age);
+    }
+}
+class Program
+{
+    public static void Main()
+    {
+        List<Student> stu=new List<Student>
+        {
+            new Student{Name="A",Age=20,Marks=50},
+            new Student{Name="B",Age=30,Marks=70},
+            new Student{Name="C",Age=40,Marks=90},
+        };
+        stu.Sort(new Comparer());
+        foreach (var s in stu)
+        {
+            Console.WriteLine($"{s.Name} {s.Age} {s.Marks}");
+        }
+    }
+}
