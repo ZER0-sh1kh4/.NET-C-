@@ -18,14 +18,23 @@ select AccountID,Month(TransactionDate) as bonusmonth, sum(Amount) as Total from
 where TransactionType='Deposit' group by AccountID,Month(TransactionDate) 
 having Sum(Amount)>50000;
 
+create procedure sp_InsertBonus
+as
+begin
 insert into Bonus(BonusID,AccountID,BonusMonth,BonusYear, BonusAmount,CreatedDate)
 select ROW_NUMBER() OVER (ORDER BY AccountID), AccountID , Month(TransactionDate), Year(TransactionDate), 1000, GetDate() from Transactions
 where TransactionType ='Deposit' group by AccountID , Month(TransactionDate), Year(TransactionDate) 
 having sum(Amount) >50000;
+end;
+exec sp_InsertBonus;
+
 ```
 
 ## Question 3
 ```sql
+create procedure sp_CurrentBalance
+as
+begin
 Select Customers.CustomerName, Accounts.AccountNumber, Accounts.OpeningBalance +isnull(D.TotalDeposit,0)-isnull(W.TotalWithdraw,0)+isnull(B.Bonus,0) as CurrentBalance
 from Customers inner join Accounts on Customers.CustomerID=Accounts.CustomerID
 left join (select AccountID , Sum(Amount) as TotalDeposit from Transactions where TransactionType='Deposit' group by  AccountID) as D
@@ -34,4 +43,6 @@ left join (select AccountID , Sum(Amount) as TotalWithdraw from Transactions whe
 on Accounts.AccountID=W.AccountId
 left join (select AccountID , Sum(BonusAmount) as Bonus from Bonus group by  AccountID) as  B
 on Accounts.AccountID=B.AccountId
+end;
+exec sp_CurrentBalance;
 ```
