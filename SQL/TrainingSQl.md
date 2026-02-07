@@ -4,12 +4,11 @@
 A training institute stores student course and marks data.
 Initially, all data was stored in a single table.
 
-Question 1 – Normalization (Mandatory)
+## Question 1 – Normalization (Mandatory)
 
 Given the un-normalized table:
 
 StudentCourseRaw
----------------------------------------
 StudentId
 StudentName
 CourseName
@@ -35,7 +34,7 @@ Foreign keys
 
 (Expected tables: Student, Course, Trainer, Exam / Marks)
 
-Question 2 – ALTER TABLE (Schema Change)
+## Question 2 – ALTER TABLE (Schema Change)
 
 Institute requirement:
 
@@ -49,7 +48,7 @@ Set default value as 0.
 
 (Depends on Question 1)
 
-Question 3 – CHECK Constraint (Mandatory)
+## Question 3 – CHECK Constraint (Mandatory)
 
 Rule:
 
@@ -61,7 +60,7 @@ Add a CHECK constraint.
 
 Prevent invalid values.
 
-Question 4 – INNER JOIN (Mandatory)
+## Question 4 – INNER JOIN (Mandatory)
 
 Write a query to display:
 
@@ -78,7 +77,7 @@ Marks
 Show only students who have appeared for exams.
 Use INNER JOIN.
 
-Question 5 – Date Function (Mandatory)
+## Question 5 – Date Function (Mandatory)
 
 Write a query to calculate total marks obtained by each student in the current year.
 
@@ -88,7 +87,7 @@ Use SQL Server date functions
 
 Do not hardcode the year
 
-Question 6 – SUBSTRING and LEFT (Mandatory)
+## Question 6 – SUBSTRING and LEFT (Mandatory)
 
 Institute wants to generate Student Login ID.
 
@@ -111,7 +110,7 @@ Generate login ID using SUBSTRING and LEFT.
 
 Display Student Name and Login ID.
 
-Question 7 – Subquery (Mandatory)
+## Question 7 – Subquery (Mandatory)
 
 Write a query to list students whose total marks are greater than the average marks of all students.
 
@@ -121,7 +120,7 @@ Use a subquery
 
 Do not calculate average in the outer query
 
-Question 8 – UNION (Mandatory)
+## Question 8 – UNION (Mandatory)
 
 Institute wants a combined list:
 
@@ -143,7 +142,7 @@ Marks
 
 Category (HIGH, LOW)
 
-Question 9 – Trigger (Mandatory)
+## Question 9 – Trigger (Mandatory)
 
 Business rule:
 
@@ -163,7 +162,7 @@ Create an AFTER INSERT trigger on Marks table.
 
 Automatically update RewardPoints.
 
-Question 10 – COALESCE + Date Calculation (Mandatory)
+## Question 10 – COALESCE + Date Calculation (Mandatory)
 
 Institute loyalty rule:
 
