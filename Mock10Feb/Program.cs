@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,43 +37,81 @@ namespace University_Course_Registration_System
                     // Implement menu handling logic using switch-case
                     // Prompt user inputs
                     // Call appropriate UniversitySystem methods
-                    switch (choice)
-                    {
-                        case "1":
-                        Console.Write("Code: ");
-                        string courseCode = Console.ReadLine();
-                        Console.Write("Name: ");
-                        string courseName = Console.ReadLine();
+                    
+                        switch (choice)
+                        {
+                            case "1":
+                                Console.Write("Code: ");
+                                string courseCode = Console.ReadLine();
+
+                                Console.Write("Name: ");
+                                string courseName = Console.ReadLine();
+
                         Console.Write("Credits: ");
                         int courseCredits = int.Parse(Console.ReadLine());
+
                         system.AddCourse(courseCode, courseName, courseCredits);
                         break;
-                        case "2":
+
+                    case "2":
                         Console.Write("Enter Student ID: ");
                         string studentId = Console.ReadLine();
 
                         Console.Write("Enter Student Name: ");
                         string studentName = Console.ReadLine();
+
                         Console.Write("Enter Student Major: ");
                         string studentMajor = Console.ReadLine();
+
                         system.AddStudent(studentId, studentName, studentMajor);
-                        Console.WriteLine("Student added successfully.");
                         break;
-                        case "3":
+
+                    case "3":
                         Console.Write("Enter Student ID: ");
                         studentId = Console.ReadLine();
+
                         Console.Write("Enter Course Code: ");
                         courseCode = Console.ReadLine();
-                        bool registrationResult =system.RegisterStudentForCourse(studentId, courseCode);
-                        Console.WriteLine(registrationResult? "Student registered successfully.": "Course registration failed.");
-                         break;
-                         case "4":
+
+                        bool registrationResult = system.RegisterStudentForCourse(studentId, courseCode);
+                        Console.WriteLine(registrationResult ? "Registered successfully" : "Registration failed");
+                        break;
+
+                    case "4":
+                        Console.Write("Enter Student ID: ");
+                        studentId = Console.ReadLine();
+
+                        Console.Write("Enter Course Code: ");
+                        courseCode = Console.ReadLine();
+
+                        bool dropResult = system.DropStudentFromCourse(studentId, courseCode);
+                        Console.WriteLine(dropResult ? "Dropped successfully" : "Drop failed");
+                        break;
+
+                    case "5":
+                        system.DisplayAllCourses();
+                        break;
+
+                    case "6":
+                        Console.Write("Enter Student ID: ");
+                        studentId = Console.ReadLine();
+                        system.DisplayStudentSchedule(studentId);
+                        break;
+
+                    case "7":
+                        system.DisplaySystemSummary();
+                        break;
+
+                    case "8":
                         exit = true;
                         Console.WriteLine("Exiting system...");
                         break;
-                        default:
-                         Console.WriteLine("Invalid choice. Please try again.");
+
+                    default:
+                        Console.WriteLine("Invalid choice.");
                         break;
+
+
                     }
                 }
                 catch (Exception ex)
