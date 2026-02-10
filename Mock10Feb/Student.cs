@@ -39,7 +39,6 @@ namespace University_Course_Registration_System
                 sum+=course.Credits;
             }
             return sum;
-            throw new NotImplementedException();
         }
 
         public bool CanAddCourse(Course course)
@@ -49,11 +48,11 @@ namespace University_Course_Registration_System
             // 2. Total credits + course credits <= MaxCredits
             // 3. Course prerequisites must be satisfied
             int TotalCredits=GetTotalCredits();
-            if(TotalCredits+course.Credits>MaxCredits) return false;
             if(!RegisteredCourses.Contains(course)) return false;
+
+            if(TotalCredits+course.Credits>MaxCredits) return false;
             if(!course.HasPrerequisites(CompletedCourses)) return false;
             else return true;
-            throw new NotImplementedException();
         }
 
         public bool AddCourse(Course course)
@@ -69,7 +68,6 @@ namespace University_Course_Registration_System
             course.EnrollStudent();
             return true;
 
-            throw new NotImplementedException();
         }
 
         public bool DropCourse(string courseCode)
@@ -82,7 +80,7 @@ namespace University_Course_Registration_System
             if(course==null) return false;
             RegisteredCourses.Remove(course);
             course.DropStudent();
-            throw new NotImplementedException();
+            return true;
         }
 
         public void DisplaySchedule()
@@ -101,7 +99,6 @@ namespace University_Course_Registration_System
             }
 
 
-            throw new NotImplementedException();
         }
     }
 }
