@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,6 @@ namespace University_Course_Registration_System
             // TODO: Return true if CurrentEnrollment >= MaxCapacity
             if(CurrentEnrollment>=MaxCapacity) return true;
             else return false;
-            throw new NotImplementedException();
         }
 
         public bool HasPrerequisites(List<string> completedCourses)
@@ -42,12 +42,11 @@ namespace University_Course_Registration_System
             // TODO: Check if ALL prerequisites exist in completedCourses
             foreach(var item in Prerequisites)
             {
-                if(!completedCourses.Contains(item)) return true;
+                if(!completedCourses.Contains(item)) return false;
 
             }
-            return false;
+            return true;
             
-            throw new NotImplementedException();
         }
 
         public void EnrollStudent()
@@ -63,7 +62,6 @@ namespace University_Course_Registration_System
             {
                 CurrentEnrollment++;
             }
-            throw new NotImplementedException();
         }
 
         public void DropStudent()
@@ -73,7 +71,6 @@ namespace University_Course_Registration_System
             {
                 CurrentEnrollment--;
             }
-            throw new NotImplementedException();
         }
 
         public string GetEnrollmentInfo()
