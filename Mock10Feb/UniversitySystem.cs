@@ -35,7 +35,6 @@ namespace University_Course_Registration_System
                 Course course=new Course(code, name, credits,maxCapacity, prerequisites);
                 AvailableCourses.Add(code,course);
             }
-            throw new NotImplementedException();
         }
 
         public void AddStudent(string id, string name, string major, int maxCredits = 18, List<string> completedCourses = null)
@@ -53,7 +52,6 @@ namespace University_Course_Registration_System
                 Student student=new Student(id, name, major,maxCredits,completedCourses);
                 Students.Add(id, student);
             }
-            throw new NotImplementedException();
         }
 
         public bool RegisterStudentForCourse(string studentId, string courseCode)
@@ -62,15 +60,12 @@ namespace University_Course_Registration_System
             // 1. Validate student and course existence
             // 2. Call student.AddCourse(course)
             // 3. Display meaningful messages
-            if(AvailableCourses.ContainsKey(courseCode) && Students.ContainsKey(studentId))
-            {
+            if(!AvailableCourses.ContainsKey(courseCode) || !Students.ContainsKey(studentId)) return false;
+            
                 Student student=Students[studentId];
                 Course course=AvailableCourses[courseCode];
-                student.AddCourse(course);
-                return true;
-            }
-            else return false;
-            throw new NotImplementedException();
+                return student.AddCourse(course);
+            
         }
 
         public bool DropStudentFromCourse(string studentId, string courseCode)
@@ -78,14 +73,12 @@ namespace University_Course_Registration_System
             // TODO:
             // 1. Validate student existence
             // 2. Call student.DropCourse(courseCode)
-            if (Students.ContainsKey(studentId))
-            {
+            if (!Students.ContainsKey(studentId)) return false;
+            
                 Student student=Students[studentId];
-                student.DropCourse(courseCode);
-                return true;
-            }
-            else return false;
-            throw new NotImplementedException();
+                
+            
+            return student.DropCourse(courseCode);
         }
 
         public void DisplayAllCourses()
@@ -97,7 +90,6 @@ namespace University_Course_Registration_System
             {
                 Console.WriteLine(course.CourseCode+course.CourseName+course.Credits+course.GetEnrollmentInfo());
             }
-            throw new NotImplementedException();
         }
 
         public void DisplayStudentSchedule(string studentId)
@@ -107,10 +99,10 @@ namespace University_Course_Registration_System
             // Call student.DisplaySchedule()
             if (!Students.ContainsKey(studentId))
             {
+                Console.WriteLine("Student not found.");
                 return;
             }
             Students[studentId].DisplaySchedule();
-            throw new NotImplementedException();
         }
 
         public void DisplaySystemSummary()
@@ -127,7 +119,6 @@ namespace University_Course_Registration_System
             Console.WriteLine($"Total Courses: {totalCourses}");
             Console.WriteLine($"Average Enrollment: {avgEnrollment:F2}");
         
-            throw new NotImplementedException();
         
         }
     }
