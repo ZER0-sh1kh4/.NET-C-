@@ -1,4 +1,4 @@
-```sql
+
 -- Exercise 01 - Creating Tables
 CREATE TABLE ZIPCODE_INFO
 (
@@ -44,4 +44,3 @@ CREATE TABLE GRADE_INFO
     GRADE_TYPE_CODE CHAR(2),
     GRADE_CODE_OCCURANCE NUMERIC(5,0)
 );
-```
